@@ -1,1 +1,9 @@
-
+---
+- name: copy the content
+  hosts: web
+  become: yes
+  tasks:
+    - name: copy the mod
+      ansible.builtin.copy:
+        content: Sun set down in east"
+        dest: /etc/motd.d/banner
