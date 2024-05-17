@@ -1,0 +1,10 @@
+---
+- name: create banner for the web server
+  hosts: web
+  become: yes
+  tasks:
+    - name: copy the banner content to web server only 
+      ansible.builtin.copy:
+        content: "Sun set down in east"
+        dest: /etc/motd.d/banner
+
