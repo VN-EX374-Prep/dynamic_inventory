@@ -1,0 +1,9 @@
+---
+- name: create banner for message of the day
+  hosts: web
+  become: yes
+  tasks:
+    - name: copy the content
+      ansible.builtin.copy:
+        content: "Sun set down in east"
+        dest: /etc/motd.d/banner
